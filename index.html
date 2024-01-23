@@ -47,6 +47,9 @@
 
         // Adiciona os dados de tempo e emocao dominante ao array
         emotionData = dominantEmotion;
+
+        document.getElementById("texto").innerText = emotionData;
+
         });
 
         
@@ -76,9 +79,9 @@
     
     </div>
     
-    <button class="v423_3984" onclick="saveToFile()"></button>
+    <div class="v423_3984" onclick="saveToFile()"></div>
     
-    <span class="v423_3985">Encaixe sua face no círculo a</span>
+    <span class="v423_3985" id="texto">Encaixe sua face no círculo a</span>
     
     <div class="v423_3986"></div><div class="v427_3970"></div>
     
