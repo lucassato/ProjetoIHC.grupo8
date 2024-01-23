@@ -24,16 +24,16 @@
           console.log('EVENT_BARRIER result', evt.detail);
         });
         
-        let emotionData = []; // Array para armazenar dados de emocao
+        var emotionData; // Array para armazenar dados de emocao
 
         window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
 
-        /* Exibe a variavel Face Emotion Detail (Com todos os detalhes) no console 
+        // Exibe a variavel Face Emotion Detail (Com todos os detalhes) no console 
             FACE_EMOTION_EVENT = {
         output: {
             dominantEmotion: String,
             emotion: {nervoso: Number, nojo: Number, medo: Number, Happy: Number, Neutral: Number, Sad: Number, Surprise: Number}
-        }}*/
+        }}
         console.log('FACE_EMOTION detail', evt.detail);
         
         // Armazena a emocao dominante na variavel
@@ -52,13 +52,10 @@
         
         // Funcao para salvar os dados (tempo e emcao dominate) em um arquivo emotion_data.json
         function saveToFile() {
-            // Cria um objeto Blob com os dados manipular arquivos para download dinamico no navegador
-            const blobData = new Blob([JSON.stringify(emotionData, null, 2)], { type: 'application/json' });
-
+           
             // Cria um link de download dinamico
-            const downloadLink = document.createElement('a');
-            downloadLink.href = URL.createObjectURL(blobData);
-            downloadLink.download = 'emotion_data.json';
+            const downloadLink = document.createElement('p');
+            downloadLink.innerText = emotionData;
 
             // Adiciona o link ao corpo do documento
             document.body.appendChild(downloadLink);
@@ -69,8 +66,6 @@
             // Remove o link apos o download
             document.body.removeChild(downloadLink);
 
-            // Reinicializa o array emotionData para evitar a acumulacao de dados
-            emotionData = [];
         }
 
         MphTools.CameraPrivacyPopup.setText({
@@ -86,7 +81,7 @@
     
     </div>
     
-    <div class="v423_3984"></div>
+    <div class="v423_3984" onclick="saveToFile()"></div>
     
     <span class="v423_3985">Encaixe sua face no círculo</span>
     
