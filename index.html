@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head><link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet" />
+    
+        <link href="./css/main.css" rel="stylesheet" />
+    
+        <title>Document</title></head>
+        
+    <body>
+
+        <script src="https://sdk.morphcast.com/mphtools/v1.1/mphtools.js" data-config="cameraPrivacyPopup, compatibilityUI, compatibilityAutoCheck"></script>
+        <script src="https://ai-sdk.morphcast.com/v1.16/ai-sdk.js"></script>
+        <script>
+        CY.loader()
+          .licenseKey("sk6486f4f505252e208f7431ac938279abe1e899754060")
+          .addModule(CY.modules().FACE_EMOTION.name, {smoothness: 0.40})
+          .load()
+          .then(({ start, stop }) => start());
+        
+        
+        window.addEventListener(CY.modules().EVENT_BARRIER.eventName, (evt) => {
+          console.log('EVENT_BARRIER result', evt.detail);
+        });
+        
+        let emotionData = []; // Array para armazenar dados de emocao
+
+        window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
+
+        /* Exibe a variavel Face Emotion Detail (Com todos os detalhes) no console 
+            FACE_EMOTION_EVENT = {
+        output: {
+            dominantEmotion: String,
+            emotion: {nervoso: Number, nojo: Number, medo: Number, Happy: Number, Neutral: Number, Sad: Number, Surprise: Number}
+        }}*/
+        console.log('FACE_EMOTION detail', evt.detail);
+        
+        // Armazena a emocao dominante na variavel
+        const dominantEmotion = evt.detail.output.dominantEmotion;
+
+        // Obtem a hora atual no formato h:m:s
+        const currentTime = new Date().toLocaleTimeString();
+
+        // Exibe apenas variavel dominantEmotion (dominantEmotion: String) e o tempo no console
+        console.log(`Dominant Emotion at ${currentTime}:`, dominantEmotion);
+
+        // Adiciona os dados de tempo e emocao dominante ao array
+        emotionData = dominantEmotion;
+        });
+
+        
+        // Funcao para salvar os dados (tempo e emcao dominate) em um arquivo emotion_data.json
+        function saveToFile() {
+            // Cria um objeto Blob com os dados manipular arquivos para download dinamico no navegador
+            const blobData = new Blob([JSON.stringify(emotionData, null, 2)], { type: 'application/json' });
+
+            // Cria um link de download dinamico
+            const downloadLink = document.createElement('a');
+            downloadLink.href = URL.createObjectURL(blobData);
+            downloadLink.download = 'emotion_data.json';
+
+            // Adiciona o link ao corpo do documento
+            document.body.appendChild(downloadLink);
+
+            // Clica no link para iniciar o download
+            downloadLink.click();
+
+            // Remove o link apos o download
+            document.body.removeChild(downloadLink);
+
+            // Reinicializa o array emotionData para evitar a acumulacao de dados
+            emotionData = [];
+        }
+
+        MphTools.CameraPrivacyPopup.setText({
+           "title": "Allow us to use your camera",
+           "description": "This experience is designed to be viewed with your camera on. The next screen will ask your consent to access data from your camera.",
+           //"url": "https://YOUR_DOMAIN/<YOUR_PRIVACY_POLICY>"
+        });
+        
+        </script>
+        
+    <div class="v423_3981">
+        <div class="v423_3982"><div class="v423_3983"></div>
+    
+    </div>
+    
+    <div class="v423_3984"></div>
+    
+    <span class="v423_3985">Encaixe sua face no círculo</span>
+    
+    <div class="v423_3986"></div><div class="v427_3970"></div>
+    
+    <div class="v423_3987"></div><div class="v423_3988"></div>
+    
+    <div class="v423_3989"></div><div class="v423_3990"></div>
+    
+    <div class="v423_3991"></div><div class="v423_3992"></div>
+    
+    <div class="v423_3993"></div><div class="v423_3994"></div>
+    
+    <div class="v423_3995"></div><div class="v423_3996"></div>
+
+</div>
+
+</body>
+
+</html>
