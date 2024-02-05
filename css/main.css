@@ -5,8 +5,8 @@ body {
   font-size: 14px;
 }
 .v423_3981 {
-  width: 100%;
-  height: 800px;
+  width: 100vw;
+  height: 100vh;
   background: rgba(27,27,27,1);
   opacity: 1;
   position: absolute;
@@ -15,21 +15,21 @@ body {
   overflow: hidden;
 }
 .v423_3982 {
-  width: 731px;
-  height: 731px;
+  width: calc(731px/1280px * 100vw);
+  height: calc(731px/800px * 100vh);
   background: url("../images/v423_3982.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 34px;
-  left: 60px;
+  top: calc(34px/800px * 100vh);
+  left: calc(60px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3983 {
-  width: 731px;
-  height: 731px;
+  width: calc(731px/1280px * 100vw);
+  height: calc(731px/800px * 100vh);
   background: rgba(98,104,110,1);
   opacity: 1;
   position: absolute;
@@ -42,24 +42,24 @@ body {
   overflow: hidden;
 }
 .v423_3984 {
-  width: 96px;
-  height: 96px;
+  width: calc(96px/1280px * 100vw);
+  height: calc(96px/800px * 100vh);
   background: url("../images/v423_3984.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 655px;
-  left: 376px;
+  top: calc(655px/800px * 100vh);
+  left: calc(376px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3985 {
-  width: 615px;
+  width: calc(615px/1280px * 100vw);
   color: rgba(250,226,226,1);
   position: absolute;
-  top: 61px;
-  left: 131px;
+  top: calc(61px/800px * 100vh);
+  left: calc(131px/1280px * 100vw);
   font-family: Comfortaa;
   font-weight: Light;
   font-size: 40px;
@@ -67,18 +67,18 @@ body {
   text-align: left;
 }
 .v423_3986 {
-  width: 489px;
-  height: 800px;
+  width: calc(489px/1280px * 100vw);
+  height: calc(800px/800px * 100vh);
   background: rgba(27,27,27,1);
   opacity: 1;
   position: absolute;
   top: 0px;
-  left: 791px;
+  left: calc(791px/1280px * 100vw);
   overflow: hidden;
 }
 .v427_3970 {
-  width: 60px;
-  height: 800px;
+  width: calc(60px/1280px * 100vw);
+  height: calc(800px/800px * 100vh);
   background: rgba(27,27,27,1);
   opacity: 1;
   position: absolute;
@@ -87,13 +87,13 @@ body {
   overflow: hidden;
 }
 .v423_3987 {
-  width: 407px;
-  height: 254px;
+  width: calc(407px/1280px * 100vw);
+  height: calc(254px/800px * 100vh);
   background: rgba(250,226,226,1);
   opacity: 1;
   position: absolute;
-  top: 495px;
-  left: 838px;
+  top: calc(495px/800px * 100vh);
+  left: calc(838px/1280px * 100vw);
   border: 4px solid rgba(228,230,195,1);
   border-top-left-radius: 150px;
   border-top-right-radius: 150px;
@@ -103,26 +103,26 @@ body {
   overflow: hidden;
 }
 .v423_3988 {
-  width: 24px;
-  height: 53px;
+  width: calc(24px/1280px * 100vw);
+  height: calc(53px/800px * 100vh);
   background: url("../images/v423_3988.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 498px;
-  left: 1102px;
+  top: calc(498px/800px * 100vh);
+  left: calc(1102px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3989 {
-  width: 384px;
-  height: 210px;
+  width: calc(384px/1280px * 100vw);
+  height: calc(210px/800px * 100vh);
   background: rgba(196,129,233,1);
   opacity: 1;
   position: absolute;
-  top: 550px;
-  left: 849px;
+  top: calc(550px/800px * 100vh);
+  left: calc(849px/1280px * 100vw);
   border: 4px solid rgba(228,230,195,1);
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
@@ -132,13 +132,13 @@ body {
   overflow: hidden;
 }
 .v423_3990 {
-  width: 366px;
-  height: 182px;
+  width: calc(366px/1280px * 100vw);
+  height: calc(182px/800px * 100vh);
   background: rgba(16,0,63,1);
   opacity: 1;
   position: absolute;
-  top: 577px;
-  left: 858px;
+  top: calc(577px/800px * 100vh);
+  left: calc(858px/1280px * 100vw);
   border: 4px solid rgba(79,53,155,1);
   border-top-left-radius: 125px;
   border-top-right-radius: 125px;
@@ -148,80 +148,80 @@ body {
   overflow: hidden;
 }
 .v423_3991 {
-  width: 80px;
-  height: 40px;
+  width: calc(80px/1280px * 100vw);
+  height: calc(40px/800px * 100vh);
   background: url("../images/v423_3991.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 669px;
-  left: 899px;
+  top: calc(669px/800px * 100vh);
+  left: calc(899px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3992 {
-  width: 80px;
-  height: 40px;
+  width: calc(80px/1280px * 100vw);
+  height: calc(40px/800px * 100vh);
   background: url("../images/v423_3992.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 629px;
-  left: 899px;
+  top: calc(629px/800px * 100vh);
+  left: calc(899px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3993 {
-  width: 80px;
-  height: 40px;
+  width: calc(80px/1280px * 100vw);
+  height: calc(40px/800px * 100vh);
   background: url("../images/v423_3993.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 669px;
-  left: 1104px;
+  top: calc(669px/800px * 100vh);
+  left: calc(1104px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3994 {
-  width: 80px;
-  height: 40px;
+  width: calc(80px/1280px * 100vw);
+  height: calc(40px/800px * 100vh);
   background: url("../images/v423_3994.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 629px;
-  left: 1104px;
+  top: calc(629px/800px * 100vh);
+  left: calc(1104px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3995 {
-  width: 44px;
-  height: 7px;
+  width: calc(44px/1280px * 100vw);
+  height: calc(7px/800px * 100vh);
   background: url("../images/v423_3995.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 709px;
-  left: 1019px;
+  top: calc(709px/800px * 100vh);
+  left: calc(1019px/1280px * 100vw);
   overflow: hidden;
 }
 .v423_3996 {
-  width: 23px;
-  height: 53px;
+  width: calc(23px/1280px * 100vw);
+  height: calc(53px/800px * 100vh);
   background: url("../images/v423_3996.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 498px;
-  left: 956px;
+  top: calc(498px/800px * 100vh);
+  left: calc(956px/1280px * 100vw);
   overflow: hidden;
 }
