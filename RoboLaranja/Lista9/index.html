@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /><link href="./css/main.css" rel="stylesheet" /><title>Document</title></head>
+
+
+<body>
+    <script>
+        var emocao;
+
+        function queryString(parameter) {  
+                    var loc = location.search.substring(1, location.search.length);   
+                    var param_value = false;   
+                    var params = loc.split("&");   
+                    for (i=0; i<params.length;i++) {   
+                        param_name = params[i].substring(0,params[i].indexOf('='));   
+                        if (param_name == parameter) {                                          
+                            param_value = params[i].substring(params[i].indexOf('=')+1)   
+                        }   
+                    }   
+                    if (param_value) {   
+                        return param_value;   
+                    }   
+                    else {   
+                        return undefined;   
+                    }   
+            }
+        emocao = queryString("minhaVariavel");
+
+        function retornar(){
+            window.location = "../index.html?minhaVariavel="+emocao;
+        }
+
+        function irRoboRoxo(){
+            window.location = "../../RoboRoxo/index.html?minhaVariavel="+emocao;
+        }
+
+        function irRoboAzul(){
+            window.location = "../../RoboAzul/index.html?minhaVariavel="+emocao;
+        }
+
+    </script>
+    
+    <div class="v440_3976"><div class="v440_3977"></div><div class="v440_3978">
+        
+        </div>
+    
+  
+        <div class="conversa">
+            
+            <p>Olha, ainda o J3ferson e nós ainda estaremos aqui <br/> 
+                podemos oferecer alguma comunicação com você, 
+                mesmo que seja limitada
+            </p>
+
+            <p>
+                Mas se está atráz de uma galera, bom... <br/>
+                sempre tem uns grupos de extensão, e bom se <br/>
+                você tem algum interesse, provavelmente vai ter <br/>
+                outras pessoas com esse mesmo interesse, <br/>
+                é só dar uma procurada, se sentir solitário <br/>
+                não vai invocar alguém na sua frente<br/>
+                
+            </p>
+            
+
+            <div class="retorno" onClick="retornar()"></div>
+
+        </div>
+
+</div>
+
+<div class="v440_3998"><div class="v440_3999"></div>
+
+<div class="v440_4000" onClick="irRoboRoxo()">
+    <div class="v440_4001">
+        <div class="v440_4002"></div>
+</div>
+
+</div><span class="v440_4003">Relaxamento</span>
+
+<div class="v440_4004" onClick="irRoboAzul()"></div>
+
+<div class="v440_4054" onClick="irRoboAzul()"></div>
+
+<span class="v440_4010">Informação</span><div class="v440_4011">
+
+</div><div class="v441_4055" ></div><span class="v440_4018">Descontração</span></div></div></body></html>
