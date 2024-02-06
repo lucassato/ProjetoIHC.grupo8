@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /><link href="./css/main.css" rel="stylesheet" /><title>Document</title></head>
+
+
+<body>
+    <script>
+        var emocao;
+
+        function queryString(parameter) {  
+                    var loc = location.search.substring(1, location.search.length);   
+                    var param_value = false;   
+                    var params = loc.split("&");   
+                    for (i=0; i<params.length;i++) {   
+                        param_name = params[i].substring(0,params[i].indexOf('='));   
+                        if (param_name == parameter) {                                          
+                            param_value = params[i].substring(params[i].indexOf('=')+1)   
+                        }   
+                    }   
+                    if (param_value) {   
+                        return param_value;   
+                    }   
+                    else {   
+                        return undefined;   
+                    }   
+            }
+        emocao = queryString("minhaVariavel");
+
+        function irTutorial(){
+            window.location = "./TutorialPt1/index.html?minhaVariavel="+emocao;
+        }
+
+        function irInicio(){
+            window.location = "../index.html";
+        }
+
+        function irLista(i){
+            window.location = "./Lista"+i+"/index.html?minhaVariavel="+emocao;
+        }
+
+        function irRoboRoxo(){
+            window.location = "../RoboRoxo/index.html?minhaVariavel="+emocao;
+        }
+
+        function irRoboAzul(){
+            window.location = "../RoboAzul/index.html?minhaVariavel="+emocao;
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            
+                if(emocao=="nervoso"){
+                    document.getElementById("list3").classList.add("destaque");
+                    document.getElementById("list8").classList.add("destaque");
+                    document.getElementById("list6").classList.add("destaque");
+                }
+                else if(emocao=="medo"){
+                    document.getElementById("list1").classList.add("destaque");
+                    document.getElementById("list5").classList.add("destaque");
+                }
+                else if(emocao=="Happy"){
+                    document.getElementById("list7").classList.add("destaque");
+                    document.getElementById("list4").classList.add("destaque");
+                }
+                else if(emocao=="Neutral"){
+                    document.getElementById("list5").classList.add("destaque");
+                    document.getElementById("list2").classList.add("destaque");
+                }
+                else if(emocao=="Sad"){
+                    document.getElementById("list9").classList.add("destaque");
+                    document.getElementById("list6").classList.add("destaque");
+                }
+                else if(emocao=="Surprise"){
+                    document.getElementById("list7").classList.add("destaque");
+                }
+                else{
+                    document.getElementById("list5").classList.add("destaque");
+                    document.getElementById("list7").classList.add("destaque");
+                }
+        })
+    </script>
+    
+    <div class="v440_3976"><div class="v440_3977"></div><div class="v440_3978">
+        
+        </div>
+    
+   
+        <ui class="listaDeRecomendacoes">
+            <li onClick="irLista(0)" id="list0">
+                <div>
+                <scan class="listaTitulo" >Falar com robson</scan><br/>
+                <scan class="listaSubt">Robobson robson</scan>
+                </div>
+            </li>
+            <li onClick="irLista(1)" id="list1">
+                <div>
+                    <scan class="listaTitulo">Frase motivacional</scan><br/>
+                    <scan class="listaSubt">Rocky Balboa</scan>
+                    </div>
+            </li>
+            <li onClick="irLista(2)" id="list2">
+                <div>
+                    <scan class="listaTitulo">J3ferson tenta perder peso</scan><br/>
+                    <scan class="listaSubt">Agora não volta mais</scan>
+                    </div>
+            </li>
+            <li onClick="irLista(3)" id="list3">
+                <div>
+                    <scan class="listaTitulo">Piada da galinha</scan><br/>
+                    <scan class="listaSubt">ahuhaaaaaaaaaa</scan>
+                    </div>
+            </li>
+            <li onClick="irLista(4)" id="list4">
+                <div>
+                    <scan class="listaTitulo">O jogo</scan><br/>
+                    <scan class="listaSubt">Perdi</scan>
+                    </div>
+            </li>
+            <li onClick="irLista(5)" id="list5">
+                <div>
+                    <scan class="listaTitulo">Sobre os robôs</scan><br/>
+                    <scan class="listaSubt">olá</scan>
+                    </div>
+            </li>
+            <li onClick="irLista(6)" id="list6">
+                <div>
+                    <scan class="listaTitulo">Estou cansado</scan><br/>
+                    <scan class="listaSubt">Relaxar com Julia5</scan>
+                </div>
+            </li>
+            <li onClick="irLista(7)" id="list7">
+                <div>
+                    <scan class="listaTitulo">Cara ou coroa</scan><br/>
+                    <scan class="listaSubt">Ganhei</scan>
+                </div>
+            </li>
+            <li onClick="irLista(8)" id="list8">
+                <div>
+                    <scan class="listaTitulo">Difícil os estudos</scan><br/>
+                    <scan class="listaSubt">Robson Motivacional</scan>
+                </div>
+            </li>
+            <li onClick="irLista(9)" id="list9">
+                <div>
+                    <scan class="listaTitulo">Sentindo Solidão</scan><br/>
+                    <scan class="listaSubt">Recomendações de robson</scan>
+                </div>
+            </li>
+        </ui>
+    
+</div>
+
+<div class="v440_3998"><div class="v440_3999"></div>
+
+<div class="v440_4000" onClick="irRoboRoxo()">
+    <div class="v440_4001">
+        <div class="v440_4002"></div>
+</div>
+
+</div><span class="v440_4003">Relaxamento</span>
+
+<div class="v440_4004" onClick="irRoboAzul()"></div>
+
+<div class="v440_4054" onClick="irRoboAzul()"></div>
+
+<span class="v440_4010">Informação</span><div class="v440_4011">
+
+</div><div class="v441_4055"></div><span class="v440_4018">Descontração</span></div></div></body></html>
