@@ -7,8 +7,6 @@
         <link href="./css/main.css" rel="stylesheet" />
     
         <title>Document</title>
-        
-    
     
     </head>
         
@@ -86,6 +84,26 @@
     <div class="v423_3986"></div><div class="v427_3970"></div>
     
     <div class="robo"></div>
+
+    
+<div id="container">
+    <video autoplay="true" id="videoElement">
+    
+    </video>
+</div>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+            console.log("Something went wrong!");
+            });
+        }
+    </script>
 
 </div>
 
