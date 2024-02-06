@@ -8,19 +8,6 @@
     
         <title>Document</title>
         
-        <style>
-            #container {
-                margin: 0px auto;
-                width: 500px;
-                height: 375px;
-                border: 10px #333 solid;
-            }
-            #videoElement {
-                width: 500px;
-                height: 375px;
-                background-color: #666;
-            }
-        </style>
     
     
     </head>
@@ -84,24 +71,7 @@
         
         </script>
         
-    <div id="container">
-        <video autoplay="true" id="videoElement">
-        
-        </video>
-    </div>
-    <script>
-        var video = document.querySelector("#videoElement");
-
-        if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-            video.srcObject = stream;
-            })
-            .catch(function (err0r) {
-            console.log("Something went wrong!");
-            });
-        }
-    </script>
+    
     
     <div class="v423_3981">
         <div class="v423_3982"><div class="v423_3983"></div>
