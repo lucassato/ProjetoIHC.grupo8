@@ -2,7 +2,45 @@
 
 
 <body>
-    
+    <script>
+        var emocao;
+
+        function queryString(parameter) {  
+                    var loc = location.search.substring(1, location.search.length);   
+                    var param_value = false;   
+                    var params = loc.split("&");   
+                    for (i=0; i<params.length;i++) {   
+                        param_name = params[i].substring(0,params[i].indexOf('='));   
+                        if (param_name == parameter) {                                          
+                            param_value = params[i].substring(params[i].indexOf('=')+1)   
+                        }   
+                    }   
+                    if (param_value) {   
+                        return param_value;   
+                    }   
+                    else {   
+                        return undefined;   
+                    }   
+            }
+        emocao = queryString("minhaVariavel");
+
+        function irTutorial(){
+            window.location = "./TutorialPt1/index.html?minhaVariavel="+emocao;
+        }
+
+        function irInicio(){
+            window.location = "../index.html";
+        }
+
+        function irRoboLaranja(){
+            window.location = "../RoboLaranja/index.html?minhaVariavel="+emocao;
+        }
+
+        function irRoboRoxo(){
+            window.location = "../RoboRoxo/index.html?minhaVariavel="+emocao;
+        }
+
+    </script>
     
     <div class="v440_3976"><div class="v440_3977"></div><div class="v440_3978">
         
@@ -10,32 +48,33 @@
         
         
         <div class="v440_3989">
-            <div class="v440_3990">
+            <div class="v440_3990" onClick="irTutorial()">
             <div class="v440_3991"></div><div class="v440_3992"></div>
             
             <span class="v440_3993">Como o app funciona?</span>
 
         </div>
-<div class="v440_3994">
+<div class="v440_3994" onClick="irInicio()">
     <div class="v440_3995"></div>
 
     <div class="v440_3996"></div>
 
-<span class="v440_3997">Falar com robô</span>
+<span class="v440_3997">Retornar ao inicio</span>
 
 </div>
 </div>
 
-<div class="v440_3998"><div class="v440_3999"></div><div class="v440_4000">
+<div class="v440_3998"><div class="v440_3999"></div><div class="v440_4000" onClick="irRoboRoxo()">
     <div class="v440_4001">
         <div class="v440_4002"></div>
 </div>
 
 </div><span class="v440_4003">Relaxamento</span>
+
 <div class="v440_4004"></div>
 
 <div class="v440_4054"></div>
 
-<span class="v440_4010">Informação</span><div class="v440_4011">
+<span class="v440_4010">Informação</span><div class="v440_4011" onClick="irRoboLaranja()">
 
-</div><div class="v441_4055"></div><span class="v440_4018">Descontração</span></div></div></body></html>
+</div><div class="v441_4055" onClick="irRoboLaranja()"></div><span class="v440_4018">Descontração</span></div></div></body></html>
