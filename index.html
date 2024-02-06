@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head><link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet" />
+    
+        <link href="./css/main.css" rel="stylesheet" />
+    
+        <title>Document</title>
+        
+        <style>
+            #container {
+                margin: 0px auto;
+                width: 500px;
+                height: 375px;
+                border: 10px #333 solid;
+            }
+            #videoElement {
+                width: 500px;
+                height: 375px;
+                background-color: #666;
+            }
+        </style>
+    
+    
+    </head>
+        
+        
+    <body>
+
+        <script src="https://sdk.morphcast.com/mphtools/v1.1/mphtools.js" data-config="cameraPrivacyPopup, compatibilityUI, compatibilityAutoCheck"></script>
+        <script src="https://ai-sdk.morphcast.com/v1.16/ai-sdk.js"></script>
+        <script>
+        CY.loader()
+          .licenseKey("sk6486f4f505252e208f7431ac938279abe1e899754060")
+          .addModule(CY.modules().FACE_EMOTION.name, {smoothness: 0.40})
+          .load()
+          .then(({ start, stop }) => start());
+        
+        
+        window.addEventListener(CY.modules().EVENT_BARRIER.eventName, (evt) => {
+          console.log('EVENT_BARRIER result', evt.detail);
+        });
+        
+        var emotionData; // Array para armazenar dados de emocao
+
+        window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
+
+        // Exibe a variavel Face Emotion Detail (Com todos os detalhes) no console 
+            FACE_EMOTION_EVENT = {
+        output: {
+            dominantEmotion: String,
+            emotion: {nervoso: Number, nojo: Number, medo: Number, Happy: Number, Neutral: Number, Sad: Number, Surprise: Number}
+        }}
+        console.log('FACE_EMOTION detail', evt.detail);
+        
+        // Armazena a emocao dominante na variavel
+        const dominantEmotion = evt.detail.output.dominantEmotion;
+
+        // Obtem a hora atual no formato h:m:s
+        const currentTime = new Date().toLocaleTimeString();
+
+        // Exibe apenas variavel dominantEmotion (dominantEmotion: String) e o tempo no console
+        console.log(`Dominant Emotion at ${currentTime}:`, dominantEmotion);
+
+        // Adiciona os dados de tempo e emocao dominante ao array
+        emotionData = dominantEmotion;
+
+        });
+
+        
+        // Funcao para salvar os dados (tempo e emcao dominate) em um arquivo emotion_data.json
+        function nextPage() {
+            
+            window.location = "./EmocaoConfirma/index.html?minhaVariavel="+emotionData;
+
+        }
+
+        MphTools.CameraPrivacyPopup.setText({
+           "title": "Allow us to use your camera",
+           "description": "This experience is designed to be viewed with your camera on. The next screen will ask your consent to access data from your camera.",
+           //"url": "https://YOUR_DOMAIN/<YOUR_PRIVACY_POLICY>"
+        });
+        
+        </script>
+        
+    <div id="container">
+        <video autoplay="true" id="videoElement">
+        
+        </video>
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+            console.log("Something went wrong!");
+            });
+        }
+    </script>
+    
+    <div class="v423_3981">
+        <div class="v423_3982"><div class="v423_3983"></div>
+    
+    </div>
+    
+    <div class="v423_3984" onclick="nextPage()"></div>
+    
+    <span class="v423_3985" id="texto"><br>Encaixe sua face na câmera<br/><br>Clique no botão<br/>
+        </span>
+    
+    <div class="v423_3986"></div><div class="v427_3970"></div>
+    
+    <div class="robo"></div>
+
+</div>
+
+</body>
+
+</html>
