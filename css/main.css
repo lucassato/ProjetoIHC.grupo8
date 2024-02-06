@@ -16,6 +16,29 @@ body {
   overflow: hidden;
 }
 
+#container {
+  margin: 10px #333 solid;
+  width: calc(222/1280 * 100vw);
+  height: calc(370/800 *100vh);
+  top: calc(272/800 * 100vh);
+  left: calc(315/1280 * 100vw);
+  position: absolute;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+#videoElement {
+  width: calc(222/1280 * 100vw);
+  height: calc(370/800 *100vh);
+  background-color: #666;
+  position: absolute;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
 .robo{
   width: calc(407/1280 * 100vw);
   height: calc(265/800 * 100vh);
@@ -74,13 +97,13 @@ body {
   width: calc(615/1280 * 100vw);
   color: rgba(250,226,226,1);
   position: absolute;
-  top: calc(61/800 * 100vh);
+  top: calc(21/800 * 100vh);
   left: calc(131/1280 * 100vw);
   font-family: Comfortaa;
   font-weight: Light;
-  font-size: 40px;
+  font-size: calc(40/1280 * 100vw);
   opacity: 1;
-  text-align: left;
+  text-align: center;
 }
 .v423_3986 {
   width: calc(489/1280 * 100vw);
