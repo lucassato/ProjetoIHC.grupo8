@@ -1,0 +1,88 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /><link href="./css/main.css" rel="stylesheet" /><title>Document</title></head>
+
+
+<body>
+    
+    <script>
+        var emocao;
+
+        function queryString(parameter) {  
+                    var loc = location.search.substring(1, location.search.length);   
+                    var param_value = false;   
+                    var params = loc.split("&");   
+                    for (i=0; i<params.length;i++) {   
+                        param_name = params[i].substring(0,params[i].indexOf('='));   
+                        if (param_name == parameter) {                                          
+                            param_value = params[i].substring(params[i].indexOf('=')+1)   
+                        }   
+                    }   
+                    if (param_value) {   
+                        return param_value;   
+                    }   
+                    else {   
+                        return undefined;   
+                    }   
+            }
+        emocao = queryString("minhaVariavel");
+
+
+        function irRoboAzul(){
+            window.location = "../RoboAzul/index.html?minhaVariavel="+emocao;
+        }
+
+        function irRoboLaranja(){
+            window.location = "../RoboLaranja/index.html?minhaVariavel="+emocao;
+        }
+
+        
+    </script>
+    
+    
+    <div class="v440_3976">
+
+        <div class="v450_4181">
+            
+            <span class="v450_4182" id="texto0a">
+                Faça o exercicio de box breathing<br/>
+                comigo
+                inspire... segure... <br/>
+                respire... segure</span>
+        
+        </div>
+                
+
+        <div class="v440_3977"></div>
+    
+        <div class="v440_3978"></div>
+
+
+    </div>
+
+    <div class="v440_3998"><div class="v440_3999"></div><div class="v440_4000" >
+        <div class="v440_4001">
+            
+            <div class="v440_4002"></div>
+
+        </div>
+
+    </div>
+
+    
+
+    <span class="v440_4003">Relaxamento</span>
+
+
+    <div class="v440_4004" onClick="irRoboAzul()"></div>
+
+
+    <div class="v440_4054" onClick="irRoboAzul()"></div>
+
+    <span class="v440_4010">Informação</span>
+
+    <div class="v440_4011" onClick="irRoboLaranja()"></div>
+
+    <div class="v441_4055" onClick="irRoboLaranja()"></div>
+
+    <span class="v440_4018">Descontração</span>
+
+</body></html>

@@ -57,7 +57,8 @@
         // Funcao para salvar os dados (tempo e emcao dominate) em um arquivo emotion_data.json
         function nextPage() {
             
-            window.location = "./EmocaoConfirma/index.html?minhaVariavel="+emotionData;
+            //window.location = "./EmocaoConfirma/index.html?minhaVariavel="+emotionData;
+            window.location = "./EmocaoConfirma/index.html?minhaVariavel="+"bravo";
 
         }
 
@@ -69,7 +70,19 @@
         
         </script>
         
-    
+    <script src="jquery-3.7.1.min.js">
+
+        $.ajax({
+                url: 'http://192.168.1.100:5000/led/changeExpression/9',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("accept", "application/json")
+                }, success: function(data){
+                    alert(data);
+                    //process the JSON data etc
+                }
+        })
+
+    </script>
     
     <div class="v423_3981">
         <div class="v423_3982"><div class="v423_3983"></div>
