@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head><link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet" />
+    
+        <link href="./css/main.css" rel="stylesheet" />
+    
+        <title>Document</title>
+        
+        <style>
+            #container {
+                margin: 0px auto;
+                width: 500px;
+                height: 375px;
+                border: 10px #333 solid;
+            }
+            #videoElement {
+                width: 500px;
+                height: 375px;
+                background-color: #666;
+            }
+        </style>
+    
+    
+    </head>
+        
+        
+    <body>
+
+        <script>
+        
+            var emocao;
+
+            function queryString(parameter) {  
+                        var loc = location.search.substring(1, location.search.length);   
+                        var param_value = false;   
+                        var params = loc.split("&");   
+                        for (i=0; i<params.length;i++) {   
+                            param_name = params[i].substring(0,params[i].indexOf('='));   
+                            if (param_name == parameter) {                                          
+                                param_value = params[i].substring(params[i].indexOf('=')+1)   
+                            }   
+                        }   
+                        if (param_value) {   
+                            return param_value;   
+                        }   
+                        else {   
+                            return undefined;   
+                        }   
+                }
+        
+            function nextPage() {
+            
+                
+                window.location = "../RoboAzul/index.html?minhaVariavel="+emocao;
+
+            }
+
+            document.addEventListener("DOMContentLoaded", function(){
+                emocao = queryString("minhaVariavel");
+                document.getElementById("texto").innerText+="\n"+emocao;
+
+            })
+        </script>
+        
+    
+    <div class="v423_3981">
+        <div class="v423_3982"><div class="v423_3983"></div>
+    
+    </div>
+    
+    <div class="v423_3984" onclick="nextPage()"></div>
+    
+    <span class="v423_3985" id="texto"><br>Voce está<br/>
+        </span>
+    
+    <div class="v423_3986"></div><div class="v427_3970"></div>
+    
+    <div class="robo"></div>
+
+</div>
+
+</body>
+
+</html>
